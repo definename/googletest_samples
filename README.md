@@ -10,8 +10,8 @@ sudo make install
 
 ## How to
 
-`make` - generate application binary
+`make` - generate application binary;
 
-`make test` - generate application binary and unitset(google test based)
+`make test` - generate application binary and unitset(google test based);
 
-`make clean` - clean up generated sources `bin` and `build` foulders
+`make clean` - clean up generated sources `bin` and `build` folders.
