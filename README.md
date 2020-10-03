@@ -15,3 +15,7 @@ sudo make install
 `make test` - generate application binary and unitset(google test based);
 
 `make clean` - clean up generated sources `bin` and `build` folders.
+
+`./bin/model1` - run application
+
+`./bin/model1_test` - run written tests
