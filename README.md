@@ -3,18 +3,13 @@
 ```
 sudo apt install libgtest-dev
 cd /usr/src/gtest
-  sudo cmake .
-  sudo cmake --build . --target install
-or
-  sudo make
-  sudo make install
+sudo make
+sudo make install
 ```
 
 ## How to
 
-`make` - generate application binary;
-
-`make test` - generate application binary and unitset(google test based);
+`make` - generate application binary, googletest library(gtest, gmock) and unittest(google test);
 
 `make clean` - clean up generated sources `bin` and `build` folders;
 

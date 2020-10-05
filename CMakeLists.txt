@@ -1,13 +1,34 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(WITH_UNITTEST OFF CACHE BOOL "Build unittest")
+include(GoogleTest)
+include(ExternalProject)
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+set(OPENSOURCE_DIR ${CMAKE_SOURCE_DIR}/opensource)
+set(OPENSOURCE_INSTALL_DIR ${CMAKE_BINARY_DIR}/opensource)
+set(GTEST_ROOT ${OPENSOURCE_INSTALL_DIR}/googletest)
+
+ExternalProject_Add(
+    googletest
+    URL "${OPENSOURCE_DIR}/googletest-master.zip"
+    URL_MD5 7f8641bf21d39a7b30b64b55cbb13677
+    CMAKE_ARGS
+        -DCMAKE_INSTALL_PREFIX:PATH=${GTEST_ROOT})
+
+set(GTEST_INCLUDE_DIRS
+    ${OPENSOURCE_INSTALL_DIR}/googletest/include)
+set(GTEST_LIBRARIES
+    ${OPENSOURCE_INSTALL_DIR}/googletest/lib/libgtest.a)
+set(GTEST_MAIN_LIBRARIES
+    ${OPENSOURCE_INSTALL_DIR}/googletest/lib/libgtest_main.a)
+set(GMOCK_LIBRARIES
+    ${OPENSOURCE_INSTALL_DIR}/googletest/lib/libgmock.a)
+set(GMOCK_MAIN_LIBRARIES
+    ${OPENSOURCE_INSTALL_DIR}/googletest/lib/libgmock_main.a)
+
+find_package(Threads REQUIRED)
 
 add_subdirectory(modules/module1)
-
-if(${WITH_UNITTEST})
-    find_package(GTest REQUIRED)
-    add_subdirectory(test/module1)
-endif()
+add_subdirectory(test/module1)
