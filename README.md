@@ -1,4 +1,4 @@
-## Ubuntu install `google test` sources and build binaries
+## Ubuntu >= 18.04 install `google test` sources and build binaries
 
 ```
 sudo apt install libgtest-dev
