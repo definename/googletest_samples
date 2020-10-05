@@ -7,6 +7,9 @@ sudo make
 sudo make install
 ```
 
+Currecnty there is no way to install `gmock` library
+
+
 ## How to
 
 `make` - generate application binary, googletest library(gtest, gmock) and unittest(google test);
