@@ -14,7 +14,7 @@ Currecnty there is no way to install `gmock` library
 
 `make` - generate application binary, googletest library(gtest, gmock) and unittest(google test);
 
-`make clean` - clean up generated sources `bin` and `build` folders;
+`make clean` - clean up generated sources `build` folders;
 
 `./bin/model1` - run application;
 
