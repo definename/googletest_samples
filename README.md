@@ -3,13 +3,11 @@
 ```
 sudo apt install libgtest-dev
 cd /usr/src/gtest
-sudo cmake .
-sudo cmake --build . --target install
-
+  sudo cmake .
+  sudo cmake --build . --target install
 or
-
-sudo make
-sudo make install
+  sudo make
+  sudo make install
 ```
 
 ## How to
