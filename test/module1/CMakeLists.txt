@@ -20,6 +20,4 @@ target_link_libraries(${PROJECT_NAME}
         GTest::Main
 )
 
-gtest_add_tests(TARGET ${PROJECT_NAME}
-    SOURCES ${SRC}
-)
+gtest_add_tests(${PROJECT_NAME} "" AUTO)
