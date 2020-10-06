@@ -17,4 +17,11 @@ class Module1 {
     std::queue<int> q_;
 };
 
+class Turtle {
+    public:
+    virtual ~Turtle() {};
+    virtual void Up() = 0;
+    virtual void Down() = 0;
+};
+
 #endif
